@@ -30,6 +30,7 @@
 			exit();
 		}
 	}
+	
 	// phong chong xss 
 	if( ! function_exists('xss_clean') ) {
 	        function xss_clean($data)

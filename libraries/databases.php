@@ -13,6 +13,11 @@
          */
         public $link;
 
+        //ham lay ra doi tuong moi 
+        function getNew($table,$num){
+            $sqlNew= "SELECT * FROM {$table} WHERE 1 ORDER BY ID DESC LIMIT {$num}";
+        }
+        
         public function __construct()
         {
             $this->link = mysqli_connect("localhost","root","","shop") or die ();
@@ -274,5 +279,5 @@
             return $tien;
         }
     }
-   
+    
 ?>
