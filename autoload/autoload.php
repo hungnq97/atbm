@@ -8,7 +8,7 @@ require_once __DIR__."/../libraries/functions.php";
 $db = new Database();
 define("ROOT",$_SERVER['DOCUMENT_ROOT']."/shop/public/uploads/");
 
-$sqlNew= "SELECT * FROM products WHERE 1 ORDER BY ID DESC LIMIT 3";
+$sqlNew= "SELECT * FROM products WHERE 1 ORDER BY ID DESC LIMIT 4";
 $productNew= $db -> fetchsql($sqlNew); // ham nay thuc hien cau truy van
 
 
