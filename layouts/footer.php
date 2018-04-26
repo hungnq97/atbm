@@ -2,16 +2,19 @@
      </div>
      <div class="container">
         <div class="col-md-4 bottom-content">
+            <a href=""><img src="<?php echo baseUrl(); ?>public/frontend/images/deal.png"></a>
+        </div>
+        <div class="col-md-4 bottom-content">
             <a href=""><img src="<?php echo baseUrl(); ?>public/frontend/images/free-shipping.png"></a>
         </div>
         <div class="col-md-4 bottom-content">
             <a href=""><img src="<?php echo baseUrl(); ?>public/frontend/images/guaranteed.png"></a>
         </div>
-        <div class="col-md-4 bottom-content">
-            <a href=""><img src="<?php echo baseUrl(); ?>public/frontend/images/deal.png"></a>
-        </div>
+       
+
+        
     </div>
-    <div class="container-pluid">
+    <div class="container-fluid">
         <section id="footer">
             <div class="container">
                 <div class="col-md-3" id="shareicon">
@@ -118,7 +121,7 @@
 </div>
 </div>      
 </div>
-<script  src="js/slick.min.js"></script>
+<script  src="<?php echo baseUrl(); ?>public/frontend/js/slick.min.js"></script>
 </body>
 </html>
 <script type="text/javascript">

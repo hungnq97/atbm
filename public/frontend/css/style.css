@@ -5,11 +5,11 @@
   font-weight: 400;
   src: url('../fonts/roboto-v15-latin_vietnamese-regular.eot'); /* IE9 Compat Modes */
   src: local('Roboto'), local('Roboto-Regular'),
-       url('../fonts/roboto-v15-latin_vietnamese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/roboto-v15-latin_vietnamese-regular.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/roboto-v15-latin_vietnamese-regular.woff') format('woff'), /* Modern Browsers */
-       url('../fonts/roboto-v15-latin_vietnamese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/roboto-v15-latin_vietnamese-regular.svg#Roboto') format('svg'); /* Legacy iOS */
+  url('../fonts/roboto-v15-latin_vietnamese-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/roboto-v15-latin_vietnamese-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto-v15-latin_vietnamese-regular.woff') format('woff'), /* Modern Browsers */
+  url('../fonts/roboto-v15-latin_vietnamese-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  url('../fonts/roboto-v15-latin_vietnamese-regular.svg#Roboto') format('svg'); /* Legacy iOS */
 }
 *{
     margin: 0px;
@@ -42,6 +42,7 @@ h1,h2,h3,h4,h5,h6
 
 #header-top {
     border-bottom: 1px solid #e3e3e3;
+
 }
 
 #header-text a{
@@ -120,7 +121,7 @@ h1,h2,h3,h4,h5,h6
 
 #header-main form
 {
-    
+
     padding: 0px;
 }
 
@@ -171,7 +172,7 @@ h1,h2,h3,h4,h5,h6
 }
 #header-right i
 {
-    color: #ea3a3c;
+    color: #34aa40;
     font-size: 30px;
     padding-right: 10px;
 }
@@ -224,11 +225,11 @@ h1,h2,h3,h4,h5,h6
 {
     color: white;
     font-weight:bold;
-    background-color: #d11618;;
+    background-color: #34aa40;
     line-height: 40px;
     text-transform: uppercase;
     font-size: 12px;
-  
+
 }
 #main-shopping > li > a
 {
@@ -261,7 +262,7 @@ h1,h2,h3,h4,h5,h6
 }
 .box-title
 {
-    background:#ea3a3c;
+    background:#34aa40;
     color: white;
     font-weight: bold;
     font-size: 14px;
@@ -271,7 +272,7 @@ h1,h2,h3,h4,h5,h6
 {
     color: white;
     font-size: 20px;
-    background: #da1719;;
+    background: #34aa40;
     padding: 12px;
 }
 /* menud a cap */
@@ -318,7 +319,7 @@ h1,h2,h3,h4,h5,h6
 {
     padding: 10px 25px;
     border-bottom: 1px solid #e3e3e3;
-   
+
 }
 .box-menu > ul > li > a
 {
@@ -357,7 +358,7 @@ h1,h2,h3,h4,h5,h6
 {
     color: #e74847;
 }
-.info b
+.info 
 {
     padding: 7px 5;
 }
@@ -365,17 +366,63 @@ h1,h2,h3,h4,h5,h6
 
 /* ===================MAIN CONTENT ===================== */
 .title-main
-{
-    border-bottom:2px solid #e3e3e3;
-    padding: 5px 5px 5px 0px;
+{       float: left;
+    background: #faec31;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9px 10px 7px;
+    margin-bottom: 20px;
 }
-
+.boxtitle{
+    width: 100%;
+    float: left;
+    background: #34aa40;
+    color: #fff;
+}
+.heading_title {
+    float: left;
+    background: #faec31;
+    color: #333;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 9px 10px 7px;
+}
+.bg_title {
+    background-image: url(http://shop.giaodienwebmau.com/wp-content/themes/web-khoi-nghiep/images/icon_heading.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+    width: 43px;
+    height: 38px;
+    float: left;
+}
+.listmore {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: -4px;
+    
+    right: 30px;
+    position: absolute;
+}
+.listmore a{
+    font-weight: bold;
+    padding: 10px 1px 2px 0px;
+    font-size: 14px;
+    border-bottom: 2px solid #faec31;
+    text-transform: uppercase;
+    color:fff;
+}
 .title-main a
-{
+{   
+    
     font-weight: bold;
     padding: 5px 7px 5px 0px;
     font-size: 18px;
-    border-bottom: 2px solid #ea3a3c;
+    border-bottom: 2px solid #faec31;
     text-transform: uppercase;
 
 }
@@ -399,8 +446,8 @@ h1,h2,h3,h4,h5,h6
 }
 .info-item a
 {
-    color: #999;
-    font-size: 14px;
+    color: #1E73BE;
+    font-size: 16px;
     font-weight: bold;
 }
 .info-item a:hover
@@ -567,7 +614,7 @@ h1,h2,h3,h4,h5,h6
 #imgdetail > li
 {
     border-right: 1px solid #e3e3e3;
-   
+
 }
 
 #right li
@@ -623,13 +670,13 @@ h1,h2,h3,h4,h5,h6
     line-height: 15px;
     padding: 10px 20px;
     font-size: 20px;
-  
+
 }
 
 .box-footer
 {
     border-left: 1px solid #e3e3e3;
-     margin-top: 20px;
+    margin-top: 20px;
 }
 .box-footer ul li
 {

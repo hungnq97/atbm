@@ -60,7 +60,7 @@ $categories = $db->fetchAll('categories');
                                     <option value="">Danh muc</option>
                                         <?php foreach ($categories as $item) :?>
                                             
-                                            <option  value="<?php echo $item['id'];?>"><?php echo $item['name'] ?></option>
+                                            <option  value="<?php echo $item['id'];?>"><a href="../danh-muc-san-pham.php?id=<?php echo $item['id']?>"><?php echo $item['name'] ?></a></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </label>
@@ -94,14 +94,14 @@ $categories = $db->fetchAll('categories');
             <div class="container">
                 <nav>
                     <div class="home pull-left">
-                        <a href="">Trang chủ</a>
+                        <a href="<?php echo baseUrl(); ?>">Trang chủ</a>
                     </div>
                     <!--menu main-->
                     <ul id="menu-main">
                         <?php $categories = $db->fetchAll('categories'); ?>  
                         <?php foreach ($categories as $category):  ?>
                             <li>
-                                <a href="danh-muc.php?id=<?php echo $category['id']?>">
+                                <a href="<?php echo baseUrl();?>danh-muc-san-pham.php?id=<?php echo $category['id']?>">
                                     <?=$category['name']; ?>
                                 </a>
                             </li>
@@ -111,7 +111,7 @@ $categories = $db->fetchAll('categories');
                     <!--Shopping-->
                     <ul class="pull-right" id="main-shopping">
                         <li>
-                            <a href=""><i class="fa fa-shopping-basket"></i> My Cart </a>
+                            <a href=""><i class="fa fa-shopping-basket"></i> giỏ hàng </a>
                         </li>
                     </ul>
                     <!--end Shopping-->
@@ -126,17 +126,17 @@ $categories = $db->fetchAll('categories');
                         <h3 class="box-title"><i class="fa fa-list"></i>  Danh mục</h3>
                         <ul>
                             <?php $categories = $db->fetchAll('categories'); ?>  
+                            <?php $categories = $db->fetchAll('categories'); ?>  
                             <?php foreach ($categories as $category):  ?>
                                 <li>
-                                    <a href="danh-muc.php?id=<?php echo $category['id']?>">
+                                    <a href="<?php echo baseUrl();?>danh-muc-san-pham.php?id=<?php echo $category['id']?>">
                                         <?=$category['name']; ?>
                                     </a>
                                 </li>
-                            <?php endforeach; ?>
-                        </ul>
+                            <?php endforeach; ?>                           </ul>
                     </div>
                     <div class="box-left box-menu">
-                        <h3 class="box-title"><i class="fa fa-warning"></i>  Sản phẩm mới </h3>
+                        <h3 class="box-title"><i class="fa fa-bell"></i>  Sản phẩm mới </h3>
 
                         <ul>
                             <?php foreach ($productNew as $item): ?>
@@ -158,7 +158,7 @@ $categories = $db->fetchAll('categories');
                     </div> 
 
                     <div class="box-left box-menu">
-                        <h3 class="box-title"><i class="fa fa-warning"></i>  Sản phẩm mới </h3>
+                        <h3 class="box-title"><i class="fa fa-calendar"></i>  Sản phẩm hot </h3>
 
                         <ul>
                             <?php foreach ($productNew as $item): ?>

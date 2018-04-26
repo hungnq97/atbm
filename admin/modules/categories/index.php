@@ -32,6 +32,7 @@ $categories = $db->fetchAll('categories');
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Slug</th>
+                                <th>Banner</th>
                                 <th>Home</th>
                                 <th>Created at</th>
                                 <th>Action</th>
@@ -44,6 +45,7 @@ $categories = $db->fetchAll('categories');
                                 <td><?= $category['id']  ?></td>
                                 <td><?= $category['name']  ?></td>
                                 <td><?= $category['slug']  ?></td>
+                                <td><?= $category['banner']  ?></td>
                                 <td><a href="home.php?id=<?php echo $category['id'];?>" class ="btn btn-xs <?php echo ($category['home']==1) ? "btn-info" : "btn-danger" ?>">
                                     <?php echo ($category['home'] == 1) ? "hiển thị": "không hiển thị" ?>
                                 </a></td>
