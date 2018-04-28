@@ -166,7 +166,7 @@ $categories = $db->fetchAll('categories');
                                     <a href="">
                                         <img src="<?php echo uploads()?>/products/<?php echo $item['thumbnail'] ?>" class="img-responsive pull-left" width="80" height="80">
                                         <div class="info pull-right">
-                                            <p class="name"><?= $item['name'] ?></p>
+                                            <p ><a class="name" href="<?php echo baseUrl();?>chi-tiet-san-pham.php?id=<?php echo $item['id'] ?>"><?= $item['name'] ?><a></p>
                                             <b class="price">Giảm giá: <?= number_format($item['sale'])?></b><br>
                                             <b class="sale">Giá gốc: <?= number_format($item['price'])?></b><br>
                                             <span class="view"><i class="fa fa-eye"></i> 100000 : <i class="fa fa-heart-o"></i> 10</span>

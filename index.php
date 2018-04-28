@@ -24,11 +24,7 @@
 				<div class="boxtitle">
 					<div class="heading_title"><?php echo $key; ?></div>
 					<p><span class="bg_title"</span></p>
-					<?php foreach ($cateHome as $cate): ?>
-					<div class="listmore">
-					<a href="danh-muc-san-pham.php?id=<?php echo $cate['id'] ?>">Xem thêm</a>
-					</div>
-					<?php endforeach; ?>
+					
 				</div>
 				<?php $count = 0; ?>
 				<div class="showitem clearfix">

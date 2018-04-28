@@ -1,16 +1,33 @@
 <?php 
 
-require_once __DIR__."/autoload/autoload.php";  
-$id = intval(inputGet("id"));
-$hasCate = $db ->fetchID("categories",$id);
-if(empty($hasCate)){
-	$_SESSION['error']="Du lieu khong ton tai";
-	redirectModules("categories");
-}
-$sql = "SELECT * FROM products WHERE category_id=$id";
-$productcate = $db -> fetchsql($sql);
+	require_once __DIR__."/autoload/autoload.php";  
+	$id = intval(inputGet("id"));
+	$hasCate = $db ->fetchID("categories",$id);
+	if(empty($hasCate)){
+		$_SESSION['error']="Danh muc khong ton tai";
+		redirectModules("categories");
+	}
 
+	//phan trang
+	if(isset($_GET['p'])){
+		$p= $_GET['p'];
+	}else{
+		$p = 1;
+	}
+	$sql = "SELECT * FROM products WHERE category_id=$id";
+	$productcate = $db -> fetchsql($sql);
+	
+	$total = count($db -> fetchsql($sql));
+	
+	$product = $db -> Pagination("products",$sql,$total,$p,2,true);
+	
+	$sotrang = $product['page'];
+	
+	unset($product['page']);
+
+	$path = $_SERVER['SCRIPT_NAME'];
 ?>
+
 <?php  require_once __DIR__."/layouts/header.php";  ?>
 <div class="col-md-9 bor">
 	<section id="slide" class="text-center" >
@@ -43,22 +60,17 @@ $productcate = $db -> fetchsql($sql);
 			
 		</div>
 		<div class="clearfix text-center">
-				<nav aria-label="...">
-					<ul class="pagination justify-content-center">
-						<li class="page-item ">
-							<a class="page-link" href="#" tabindex="-1">Previous</a>
+			<nav aria-label="...">
+				<ul class="pagination justify-content-center">
+					<?php for ($i=1; $i <= $sotrang ; $i++) :?>
+						<li class="page-item <?php echo isset($_GET['p']) && $_GET['p'] == $i ? 'active' : '' ?>">
+							<a class="page-link" href="<?php echo $path ?>?id=<?= $id; ?>&&p=<?= $i ?>"><?= $i ?></a>
 						</li>
-						<li class="page-item"><a class="page-link" href="#">1</a></li>
-						<li class="page-item active">
-							<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="page-item"><a class="page-link" href="#">3</a></li>
-						<li class="page-item">
-							<a class="page-link" href="#">Next</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
+					<?php endfor; ?>					
+					
+				</ul>
+			</nav>
+		</div>
 	</section>
 </div>
 <?php  require_once __DIR__."/layouts/footer.php";  ?>

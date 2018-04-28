@@ -188,8 +188,9 @@
             return $data;
         }
 
+        
     
-        public  function fetchJones($table,$sql,$total = 1,$page,$row ,$pagi = true )
+        public  function Pagination($table,$sql,$total = 1,$page,$row ,$pagi = true )
         {
             
             $data = [];

@@ -337,11 +337,7 @@ h1,h2,h3,h4,h5,h6
     color: #ea3a3c;
     cursor:pointer;
 }
-.sale
-{
-    text-decoration: line-through;
-    color: #999;
-}
+
 .name
 {
     white-space: nowrap;
@@ -456,9 +452,30 @@ h1,h2,h3,h4,h5,h6
 }
 .price
 {
-    color: #ea3a3c;
+    color: #f53;
+    
 }
-
+.sale
+{
+    text-decoration: line-through;
+    color: #333;
+    
+}
+.price-sp
+{
+    color: #f53;
+    font-size: 24px;
+    line-height: 24px;
+    
+}
+.sale-sp
+{
+    text-decoration: line-through;
+    color: #333;
+    font-size: 14px;
+    
+    
+}
 .item-product 
 {
     position: relative;
@@ -587,8 +604,12 @@ h1,h2,h3,h4,h5,h6
 .tab-content 
 {
     padding: 20px;
+    line-height: 20px;
 }
-
+.tab-content p{
+    padding-top: 10px;
+    font-size: 16px;    
+}
 #right h3
 {
     font-weight: 700;
@@ -722,4 +743,16 @@ h1,h2,h3,h4,h5,h6
     padding: 5px;
     background: #DDDDDD;
     color: #444;
+}
+.buy{
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    display: block;
+    background: #fd6e1d;
+    color: #fff;
+    font-size: 20px;
+}
+.col-md-6 p{
+    font-size: 16px;
 }
