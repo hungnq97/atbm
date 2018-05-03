@@ -31,7 +31,7 @@ $categories = $db->fetchAll('categories');
                             <nav id="header-nav-top">
                                 <ul class="list-inline pull-right" id="headermenu">
                                     <li>
-                                        <a href=""><i class="fa fa-unlock"></i> Login</a>
+                                        <a href="<?php echo baseUrl(); ?>dang-nhap.php"><i class="fa fa-unlock"></i> Login</a>
                                     </li>
                                     <li>
                                         <a href=""><i class="fa fa-user"></i> My Account <i class="fa fa-caret-down"></i></a>

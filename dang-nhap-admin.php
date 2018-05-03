@@ -1,22 +1,3 @@
-<?php 
-    require_once __DIR__."/autoload/autoload.php"; 
-    $Alladmin = $db -> fetchAll("admin"); 
-
-    if(isset($_POST['btn-submit']))
-    {
-        foreach($Alladmin as $user){
-            if(inputPost('email') == $user['email'] && inputPost('password') == $user['password']){
-                echo "Dang nhap thanh cong";
-                header('location:'.baseUrl()."admin/dasboard.php");
-            }else {
-                echo "Dang nhap that bai";
-            }
-            
-        }
-    }
-    
-
- ?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -25,7 +6,7 @@
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../public/frontend/css/login.css">
+    <link rel="stylesheet" type="text/css" href="public/frontend/css/login.css">
 <!-- Include the above in your HEAD tag -->
 <body>
 <section class="login-block">
@@ -33,31 +14,31 @@
     <div class="row">
         <div class="col-md-4 login-sec">
             <h2 class="text-center">Đăng nhập hệ thống PtitStore</h2>
-            <form class="login-form" action="" method="POST">
+            <form class="login-form">
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="text-uppercase">Username</label>
-                    <input type="text" class="form-control" placeholder="" name="email">
+                    <input type="text" class="form-control" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-                    <input type="password" class="form-control" placeholder="" name="password">
+                    <input type="password" class="form-control" placeholder="">
                 </div>
                 <div class="form-check">
                     <label class="form-check-label">
                     <input type="checkbox" class="form-check-input">
                     <small>Remember Me</small>
                     </label>
-                    <button type="submit" class="btn btn-login float-right" name="btn-submit">Submit</button>
+                    <button type="submit" class="btn btn-login float-right">Submit</button>
                 </div>
             </form>
-            <div class="copy-text">Created with <i class="fa fa-heart"></i> by <a href="">hungptit.com</a></div>
+            <div class="copy-text">Created with <i class="fa fa-heart"></i> by <a href="http://grafreez.com">Grafreez.com</a></div>
         </div>
         <div class="col-md-8 banner-sec">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                
                 <div class="carousel-inner" role="listbox">
                     <div class="carousel-item active">
-                        <img class="d-block img-fluid" src="../public/frontend/images/nhien.jpg" alt="First slide">
+                        <img class="d-block img-fluid" src="public/frontend/images/nhien.jpg" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
                             <div class="banner-text bg-white">
                                 <h2 class="text-dark" >Hệ thống PtitStore</h2>

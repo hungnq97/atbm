@@ -34,9 +34,9 @@ require_once __DIR__."/autoload/autoload.php";
 				</li>
 
 				<li>
-					<p>Giá thị trường : <strike class="sale-sp"> <?php echo $product['price'] ?>.VND</strike></p> 
+					<p>Giá thị trường : <strike class="sale-sp"> <?php echo $product['price'] ?>.VNĐ</strike></p> 
 					<p>PtitStore :
-						<b class="price-sp"><?php echo $product['sale'] ?>.VND
+						<b class="price-sp"><?php echo $product['sale'] ?>.VNĐ
 						</b>
 					</p>
 				</li>
