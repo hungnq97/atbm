@@ -8,6 +8,7 @@ if (isset($_POST['btn-submit']))
     "name" => inputPost('name'),
     "address" => inputPost("address"),
     "phone" => inputPost("phone"),
+    "email"  => inputPost("email"),
     "password" => inputPost("password"),
     "level" => inputPost("level")
     ];
@@ -28,6 +29,9 @@ if (isset($_POST['btn-submit']))
     if(inputPost('password') == ""){
         $error['password'] = " Mời bạn nhập đầy đủ  noi dung";
     }
+    if(inputPost('email') == ""){
+        $error['email'] = " Mời bạn nhập đầy đủ  noi dung";
+    }
 
     if(inputPost('level') == ""){
         $error['level'] = " Mời bạn nhập 1";
@@ -39,7 +43,7 @@ if (isset($_POST['btn-submit']))
 
   if($error == [])
   {   
-        if (isset($_FILES['avatar'])){
+    if (isset($_FILES['avatar'])){
 
             $file_name = $_FILES['avatar']['name']; // ten file
             $file_tmp = $_FILES['avatar']['tmp_name'];// ten duoi file
@@ -129,11 +133,23 @@ if (isset($_POST['btn-submit']))
                             <?php endif ?>        
                         </div>      
                     </div>
-
+                    
+                    
                     <div class="form-group">  
                       <div class="col-sm-8">  
+                      <label class="control-label">Email</label>
+                          <input type="email" class="form-control" name="email">
+                          <?php if (isset($error['email'])):?>
+                              <p class="text-danger"><?= $error['email']; ?></p>
+                          <?php endif ?>
+                      </div>
+                  </div>
+
+
+                  <div class="form-group">  
+                      <div class="col-sm-8">  
                           <label class="control-label">Password</label>
-                           <input type="password" class="form-control" name="password">
+                          <input type="password" class="form-control" name="password">
                           <?php if (isset($error['password'])):?>
                               <p class="text-danger"><?= $error['password']; ?></p>
                           <?php endif ?>

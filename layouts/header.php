@@ -34,6 +34,9 @@ $categories = $db->fetchAll('categories');
                                         <a href="<?php echo baseUrl(); ?>dang-nhap.php"><i class="fa fa-unlock"></i> Login</a>
                                     </li>
                                     <li>
+                                        <a href="<?php echo baseUrl(); ?>dang-ky.php"><i class="fa fa-unlock"></i> Sign Up</a>
+                                    </li>
+                                    <li>
                                         <a href=""><i class="fa fa-user"></i> My Account <i class="fa fa-caret-down"></i></a>
                                         <ul id="header-submenu">
                                             <li><a href="">Contact</a></li>
