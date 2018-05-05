@@ -1,0 +1,7 @@
+Sau khi clone file .zip về . Yêu cầu máy tính có cài xampp hoặc các phần mềm tương tự 
+B1 : Vào thư mục htdocs của xampp và tạo một thư mục có tên là shop 
+B2 : Copy tất cả source code trong thư mục sau khi giải nén file zip vào thư mục shop bên trên 
+B3 : Trên trình duyệt vào localhost/phpmyadmin tạo một cơ sở dữ liệu tên là shop và import file shop.sql trong thư mục htdocs/shop vào cơ sở dữ liệu này 
+B4 : localhost/shop để xem kết quả 
+B5 : nếu tài khoản xampp không phải là root và không có mật khẩu thì vào thư mục shop/libraries/database.php và config lại cho đúng thông tin trong hàm function __construct()
+B6 : Mọi thắc mắc nếu có liên hệ facebook.com/nguyenquochung1997

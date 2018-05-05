@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: localhost
--- Thời gian đã tạo: Th4 23, 2018 lúc 07:51 AM
+-- Thời gian đã tạo: Th5 05, 2018 lúc 02:09 PM
 -- Phiên bản máy phục vụ: 10.1.31-MariaDB
 -- Phiên bản PHP: 7.2.3
 
@@ -48,7 +48,8 @@ CREATE TABLE `admin` (
 
 INSERT INTO `admin` (`id`, `name`, `address`, `email`, `password`, `phone`, `status`, `level`, `avatar`, `created_at`, `updated_at`) VALUES
 (3, 'Bắc bê đê', 'Thanh Hóa', NULL, '12345678', '0982975372', 1, 1, '30726394_2094184500838183_4470951927391191040_n.jpg', NULL, NULL),
-(4, 'Bắc chó', 'Hà Đông', NULL, '123456', '01235558558', 1, 1, '30726394_2094184500838183_4470951927391191040_n.jpg', NULL, NULL);
+(4, 'Bắc chó', 'Hà Đông', NULL, '123456', '01235558558', 1, 1, '30726394_2094184500838183_4470951927391191040_n.jpg', NULL, NULL),
+(5, 'Nguyễn Quốc Hùng', 'Hà Đông', 'hung@gmail.com', '123456789', '0982975372', 1, 1, 'o.jpg', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -73,12 +74,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `images`, `banner`, `home`, `status`, `created_at`, `updated_at`) VALUES
-(4, 'Macbook', NULL, NULL, NULL, 0, 1, '2018-04-09 21:28:17', '2018-04-09 21:28:17'),
-(5, 'Dell', NULL, NULL, NULL, 0, 1, '2018-04-09 21:44:45', '2018-04-09 21:44:45'),
-(6, 'Asus', NULL, NULL, NULL, 0, 1, '2018-04-09 21:46:24', '2018-04-09 21:46:24'),
-(7, 'HP', NULL, NULL, NULL, 0, 1, '2018-04-13 11:01:55', '2018-04-13 11:15:59'),
-(8, 'MSI', NULL, NULL, NULL, 0, 1, '2018-04-21 02:04:39', '2018-04-21 02:04:39'),
-(9, 'HP', NULL, NULL, NULL, 0, 1, '2018-04-22 14:16:14', '2018-04-22 14:16:14');
+(4, 'Macbook', NULL, NULL, NULL, 1, 1, '2018-04-09 21:28:17', '2018-05-03 05:46:22'),
+(5, 'Dell', NULL, NULL, NULL, 1, 1, '2018-04-09 21:44:45', '2018-04-24 05:42:24'),
+(6, 'Asus', NULL, NULL, NULL, 0, 1, '2018-04-09 21:46:24', '2018-05-03 05:46:40'),
+(7, 'HP', NULL, NULL, NULL, 0, 1, '2018-04-13 11:01:55', '2018-05-03 05:46:38'),
+(8, 'MSI', NULL, NULL, NULL, 0, 1, '2018-04-21 02:04:39', '2018-05-03 05:46:41');
 
 -- --------------------------------------------------------
 
@@ -91,7 +91,7 @@ CREATE TABLE `products` (
   `name` varchar(100) DEFAULT NULL,
   `slug` varchar(100) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
-  `sale` tinyint(4) DEFAULT '0',
+  `sale` int(11) DEFAULT NULL,
   `thumbnail` varchar(100) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   `content` text,
@@ -107,13 +107,13 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `slug`, `price`, `sale`, `thumbnail`, `category_id`, `content`, `head`, `view`, `hot`, `created_at`, `updated_at`) VALUES
-(9, 'ấdsadasdsa', NULL, 11111111, 10, 'anh1.png', 5, 'asdsadasd', 0, 0, 0, NULL, '2018-04-18 13:38:18'),
-(10, '11111yyyyy', NULL, 111111, 111, 'anh2.png', 6, 'hhthth', 0, 0, 0, NULL, '2018-04-18 13:38:27'),
-(11, 'arrr', NULL, 1111, 1, 'anh3.png', 7, 'daasds', 0, 0, 0, NULL, '2018-04-18 13:38:35'),
-(12, 'cay vl', NULL, 123456, 10, 'anh4.png', 7, '111111', 0, 0, 0, NULL, '2018-04-18 13:38:43'),
-(14, 'Samsung galaxy S7', NULL, 100000000, 30, 'printed-summer-dress.jpg', 5, 'Điện thoại samsung galaxy S7', 0, 0, 0, NULL, NULL),
-(16, 'Xiao Mi Redmi Note 4', NULL, 3900000, 10, 'printed-summer-dress (3.jpg', 4, 'Xiaomi Redmi Note 4', 0, 0, 0, NULL, NULL),
-(17, 'Xiao Mi Redmi Note 4', NULL, 3900000, 10, 'printed-summer-dress (3.jpg', 4, 'Xiaomi Redmi Note 4', 0, 0, 0, NULL, NULL);
+(1, 'Điện thoại Oppo F5', NULL, 6999000, 127, 'printed-summer-dress (3.jpg', 5, 'Điện thoại Oppo F5', 0, 0, 0, NULL, '2018-05-03 05:47:22'),
+(2, 'Asus X541UA-GO835D 5  ', NULL, 8900000, 127, '57-large_default.jpg', 6, 'Asus X541UA-GO835D 5  ', 0, 0, 0, NULL, NULL),
+(3, 'Dell Inspiron N3567', NULL, 14090000, 127, '28-medium_default.jpg', 5, 'Dell Inspiron N3567/i5-7200U 4  ', 0, 0, 0, NULL, '2018-04-26 11:19:54'),
+(4, 'Dell Inspiron N3558', NULL, 13990000, 127, '28-medium_default.jpg', 5, 'Dell Inspiron N3558', 0, 0, 0, NULL, NULL),
+(5, 'Xiao Mi Redmi 5', NULL, 5990000, 127, 'printed-summer-dress (3.jpg', 5, 'Xiaomi redmi 5', 0, 0, 0, NULL, NULL),
+(6, 'MSI Gaming 770', NULL, 13000000, 127, '28-medium_default.jpg', 8, 'MSI Gaming 770', 0, 0, 0, NULL, NULL),
+(7, 'Canon 700D', NULL, 10900000, 127, '58-large_default.jpg', 7, 'Canon 700D', 0, 0, 0, NULL, '2018-04-28 09:26:50');
 
 -- --------------------------------------------------------
 
@@ -134,6 +134,16 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `users`
+--
+
+INSERT INTO `users` (`id`, `address`, `phone`, `email`, `password`, `avatar`, `name`, `status`, `token`, `created_at`, `updated_at`) VALUES
+(9, 'Hà Đông', '0982975372', 'admin@gmail.com', '12345678', NULL, 'danh mục 1', 1, NULL, NULL, NULL),
+(10, 'Hà Đông', '0982975372', 'admin@gmail.com', '12345678', NULL, 'danh mục 1', 1, NULL, NULL, NULL),
+(11, 'Hà Đông', '0982975372', 'xuanbac@gmail.com', '12345678', NULL, 'Bắc óc chó', 1, NULL, NULL, NULL),
+(12, 'Hà Nội', '091556488948', 'nguyenxuanbac@gmail.com', '123456789', NULL, 'Nguyễn Xuân Bắc', 1, NULL, NULL, NULL);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -171,25 +181,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT cho bảng `admin`
 --
 ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT cho bảng `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
