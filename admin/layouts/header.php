@@ -148,8 +148,8 @@
                                 </form>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+                                <a class="nav-link" data-toggle="modal" data-target="#exampleModal" href="<?php echo baseUrl()."admin/logout.php" ?>"> 
+                                    <i class="fa fa-fw fa-sign-out"  ></i>Đăng Xuất</a>
                                 </li>
                             </ul>
                         </div>

@@ -1,20 +1,33 @@
 <?php 
-    require_once __DIR__."/autoload/autoload.php"; 
-    $Alladmin = $db -> fetchAll("admin"); 
-
+    session_start(); 
+    require_once __DIR__."/../libraries/functions.php";
+     if (isset($_SESSION['email'])) {
+         header('location:'.baseUrl()."admin/dasboard.php");
+    }
+    
+    $link=mysqli_connect("localhost","root","","shop") or die ();
+    $error='';
     if(isset($_POST['btn-submit']))
-    {
-        foreach($Alladmin as $user){
-            if(inputPost('email') == $user['email'] && inputPost('password') == $user['password']){
-                echo "Dang nhap thanh cong";
-                header('location:'.baseUrl()."admin/dasboard.php");
+    {       $email = $_POST['email'];
+            $password = $_POST['password'];
+            if ($email == "" || $password ==""){
+                $error="Khong duoc de trong email va password";
             }else {
-                echo "Dang nhap that bai";
+            
+            $sql = "SELECT * FROM admin where email = '$email' AND password = '$password'";
+            $query = mysqli_query($link,$sql);
+            $num_rows = mysqli_num_rows($query);
+            if($num_rows==0){
+               $error="Sai mat khau hoac tai khoan";
+                
+            }else {
+                $_SESSION['email'] = $email;
+                header('location:'.baseUrl()."admin/dasboard.php");
             }
             
         }
-    }
     
+    }    
 
  ?>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -33,6 +46,7 @@
     <div class="row">
         <div class="col-md-4 login-sec">
             <h2 class="text-center">Đăng nhập hệ thống PtitStore</h2>
+            <p class="alert-danger"><?=$error ?></p>
             <form class="login-form" action="" method="POST">
                 <div class="form-group">
                     <label for="exampleInputEmail1" class="text-uppercase">Username</label>

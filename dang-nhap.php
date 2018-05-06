@@ -1,16 +1,29 @@
 <?php  require_once __DIR__."/autoload/autoload.php";  
-	$Allusers = $db -> fetchAll("users"); 
+	
 
-	if(isset($_POST['btn-submit']))
-	{
-		foreach($Allusers as $user){
-			if(inputPost('email') == $user['email'] && inputPost('password') == $user['password']){
-				echo "Dang nhap thanh cong";
-				redirectModules("users");
-			}
-			
-		}
-	}
+	$link=mysqli_connect("localhost","root","","shop") or die ();
+    $error='';
+    if(isset($_POST['btn-submit']))
+    {       $email = $_POST['email'];
+            $password = $_POST['password'];
+            if ($email == "" || $password ==""){
+                $error="Khong duoc de trong email va password";
+            }else {
+            
+            $sql = "SELECT * FROM users where email = '$email' AND password = '$password'";
+            $query = mysqli_query($link,$sql);
+            $num_rows = mysqli_num_rows($query);
+            if($num_rows==0){
+               $error="Sai mat khau hoac tai khoan";
+                
+            }else {
+                $_SESSION['client'] = $client;
+               	redirectModules("users");
+            }
+            
+        }
+    
+    }   
 ?>
 <?php  require_once __DIR__."/layouts/header.php";  ?>
 <div class="col-md-9 bor">

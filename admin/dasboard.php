@@ -2,7 +2,9 @@
 <?php 
     
     require_once __DIR__."/autoload/autoload.php"; 
-    
+    if (!isset($_SESSION['email'])) {
+         header('location:'.baseUrl()."admin/index.php");
+    }
 ?>
     
   
