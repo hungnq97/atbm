@@ -3,8 +3,8 @@
 require_once __DIR__."/../../autoload/autoload.php" ;
 $categories = $db ->fetchAll("categories");
 
-$id = intval(inputGet('id'));
-
+// $id = intval(inputGet('id'));
+  $id = $_GET['id'];
     $edit =$db->fetchID("products",$id); // LAY BAN GHI TRONG BANG CO ID 
     
     if(empty($edit)){

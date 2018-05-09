@@ -149,8 +149,8 @@
 
         public function fetchID($table , $id )
         {
-            $sql = "SELECT * FROM {$table} WHERE id = $id ";
-            $result = mysqli_query($this->link,$sql) or die("Lỗi  truy vấn fetchID " .mysqli_error($this->link));
+            $sql = "SELECT * FROM {$table} WHERE id =".$id;
+            $result = mysqli_query($this->link,$sql) or die(mysqli_error($this->link));
             return mysqli_fetch_assoc($result);
         }
 

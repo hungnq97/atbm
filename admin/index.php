@@ -15,6 +15,7 @@
             }else {
             
             $sql = "SELECT * FROM admin where email = '$email' AND password = '$password'";
+            echo $sql;
             $query = mysqli_query($link,$sql);
             $num_rows = mysqli_num_rows($query);
             if($num_rows==0){
@@ -30,9 +31,6 @@
     }    
 
  ?>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
  <title>Ptit Store</title>
     <meta charset="utf-8">
    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

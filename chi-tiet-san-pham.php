@@ -1,9 +1,16 @@
 <?php  
 require_once __DIR__."/autoload/autoload.php";  
 
-	$id = intval(inputGet("id"));
-	$product = $db ->fetchID("products",$id);
+	// $id = intval(inputGet("id"));
+	// $product = $db ->fetchID("products",$id);
+	$link=mysqli_connect("localhost","root","","shop") or die ();	
+	$id = $_GET['id'];
+
+
+	$sql = "SELECT * FROM products WHERE id=".$id;
 	
+	
+	$product = $db->fetchID("products",$id);
 ?>
 
 <?php  require_once __DIR__."/layouts/header.php";  ?>
@@ -78,11 +85,7 @@ require_once __DIR__."/autoload/autoload.php";
 				<div class="tab-content">
 					<div id="home" class="tab-pane fade in active">
 						<h3>Nội dung</h3>
-						<p>Laptop HP Elitebook 8460P là chiếc laptop siêu bền dành cho người dùng doanh nghiệp. Máy có vỏ ngoài bằng hợp kim, có khả năng chống va đập, chịu được lực nén 200kg trên bề mặt, chống chịu lực rơi từ độ cao 2 mét mà vẫn hoạt động tốt.
-
-							HP Elitebook 8460P còn có khả năng hoạt động trong môi trường gió, bụi, nhiệt độ cao, bàn phím chống đổ nước. Là sản phẩm xếp ở phân khúc cao cấp, Elitebook 8460p có giá khi xuất xưởng rất cao. Tuy nhiên, hiện tại người dùng đã có thể sở hữu cỗ máy chuyên nghiệp này với giá cực kì hợp lý. Sản phẩm được nhập khẩu từ nước ngoài về, là máy tính văn phòng thanh lý nâng cấp theo định kì.
-
-							Laptop cũ HP Elitebook 8460p hiện bán tại BKCare.vn hình thức còn đạt khoảng 90-95% so với máy mới. Tất cả máy nhập về đã được kiểm tra kĩ lưỡng. Tình trạng máy nguyên bản, chất lượng tốt, mọi chức năng hoạt động hoàn hảo không phát hiện lỗi gì</p>
+						<p><?php echo $product['content'] ?></p>
 						</div>
 						<div id="menu1" class="tab-pane fade">
 							<h3> Thông tin khác </h3>
